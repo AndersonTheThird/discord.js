@@ -15,9 +15,9 @@ class GuildMemberRemoveAction extends Action {
         member.deleted = true;
         guild.members.cache.delete(member.id);
         /**
-         * Emitted whenever a member leaves a guild, or is kicked.
+         * Emitted whenever a member leaves a guild, is kicked, or is banned.
          * @event Client#guildMemberRemove
-         * @param {GuildMember} member The member that has left/been kicked from the guild
+         * @param {GuildMember} member The member that has left/been kicked/banned from the guild.
          */
         if (shard.status === Status.READY) client.emit(Events.GUILD_MEMBER_REMOVE, member);
       }
